@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio - Ankit Bhagat</title>
+  <link rel="shortcut icon" href="cv.ico" type="image/x-icon" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Bootstrap CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    /* Custom scrollbar for smoothness */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #141e30, #243b55);
+      color: #e0e0e0;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    /* Nav underline active */
+    nav a.active {
+      border-bottom: 2px solid #fcd34d;
+      color: #fbbf24;
+    }
+
+    nav a {
+      transition: color 0.3s ease, border-bottom-color 0.3s ease;
+    }
+
+    /* Card hover effect override */
+    .card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 20px 30px rgb(252 211 77 / 0.75);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    /* Modal backdrop override for nicer effect */
+    .modal-backdrop.show {
+      opacity: 0.8;
+      background-color: #1f2937;
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          screens: {
+            xs: "375px",
+          },
+        },
+      },
+    };
+  </script>
+</head>
+
+<body class="bg-gradient-to-br from-gray-900 via-blue-900 to-indigo-900 text-gray-100">
+  <!-- Header -->
+  <header class="bg-gray-900 shadow-md sticky top-0 z-50">
+    <div class="container mx-auto flex flex-col xs:flex-row justify-between items-center p-4 gap-4 xs:gap-0">
+      <h1 class="text-2xl xs:text-3xl font-bold text-yellow-400 tracking-wide select-none select-text">
+        Ankit Bhagat
+      </h1>
+      <nav class="flex space-x-4 xs:space-x-6 overflow-x-auto no-scrollbar">
+        <a href="#about" class="hover:text-yellow-300 font-semibold nav-link whitespace-nowrap">About</a>
+        <a href="#skills" class="hover:text-yellow-300 font-semibold nav-link whitespace-nowrap">Skills</a>
+        <a href="#projects" class="hover:text-yellow-300 font-semibold nav-link whitespace-nowrap">Projects</a>
+        <button id="contactBtn"
+          class="hover:text-yellow-300 font-semibold nav-link bg-transparent border-none cursor-pointer focus:outline-yellow-300 whitespace-nowrap">
+          Contact
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto p-6 space-y-16 max-w-7xl scroll-smooth">
+    <!-- About Section -->
+    <section id="about"
+      class="flex flex-col md:flex-row items-center gap-6 md:gap-10 bg-gray-800 rounded-xl p-6 md:p-8 shadow-lg animate-fadeInUp">
+      <img src="Ankit Bhagat1.jpg" alt="Profile Picture"
+        class="w-35 h-35 sm:w-35 sm:h-35 md:w-56 md:h-56 rounded-full border-4 border-yellow-400 object-cover object-top shadow-lg" />
+
+      <div class="md:flex-1 text-center md:text-left">
+        <h2 class="text-3xl sm:text-4xl font-extrabold mb-4 text-yellow-400 select-none">
+          About Me
+        </h2>
+        <p class="text-base sm:text-lg text-gray-300 leading-relaxed select-text max-w-xl mx-auto md:mx-0">
+          👋 I am a Data Analyst passionate about transforming data into
+          actionable insights. Skilled in SQL, Python, Excel, and data
+          visualization tools to support strategic business decisions. I enjoy
+          solving complex problems and delivering clear data stories.
+        </p>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="bg-gray-800 rounded-xl p-6 md:p-8 shadow-lg animate-fadeInUp">
+      <h2 class="text-3xl sm:text-4xl font-extrabold mb-8 text-yellow-400 text-center select-none">
+        Skills
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 text-center select-text max-w-5xl mx-auto">
+        <div class="bg-blue-700 rounded-lg py-4 shadow-md hover:bg-yellow-400 hover:text-blue-900 transition">
+          <h3 class="text-lg md:text-xl font-semibold mb-2">Python</h3>
+          <p>Data wrangling, Pandas, NumPy</p>
+        </div>
+        <div class="bg-blue-700 rounded-lg py-4 shadow-md hover:bg-yellow-400 hover:text-blue-900 transition">
+          <h3 class="text-lg md:text-xl font-semibold mb-2">SQL</h3>
+          <p>Data querying, joins, optimization</p>
+        </div>
+        <div class="bg-blue-700 rounded-lg py-4 shadow-md hover:bg-yellow-400 hover:text-blue-900 transition">
+          <h3 class="text-lg md:text-xl font-semibold mb-2">Excel</h3>
+          <p>Pivot Tables, VBA Macros</p>
+        </div>
+        <div class="bg-blue-700 rounded-lg py-4 shadow-md hover:bg-yellow-400 hover:text-blue-900 transition">
+          <h3 class="text-lg md:text-xl font-semibold mb-2">Tableau</h3>
+          <p>Interactive dashboards, storytelling</p>
+        </div>
+        <div class="bg-blue-700 rounded-lg py-4 shadow-md hover:bg-yellow-400 hover:text-blue-900 transition">
+          <h3 class="text-lg md:text-xl font-semibold mb-2">Power BI</h3>
+          <p>BI reports and data visualization</p>
+        </div>
+        <div class="bg-blue-700 rounded-lg py-4 shadow-md hover:bg-yellow-400 hover:text-blue-900 transition">
+          <h3 class="text-lg md:text-xl font-semibold mb-2">Statistics</h3>
+          <p>Hypothesis testing, regression analysis</p>
+        </div>
+        <div class="bg-blue-700 rounded-lg py-4 shadow-md hover:bg-yellow-400 hover:text-blue-900 transition">
+          <h3 class="text-lg md:text-xl font-semibold mb-2">Git & GitHub</h3>
+          <p>Version control & collaboration</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="animate-fadeInUp">
+      <h2 class="text-3xl sm:text-4xl font-extrabold mb-8 text-yellow-400 text-center select-none">
+        Projects
+      </h2>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 max-w-7xl mx-auto px-2 sm:px-4">
+        <div class="col">
+          <div
+            class="card h-100 shadow-lg border-yellow-400 border-2 bg-gradient-to-b from-blue-700 to-blue-900 text-gray-100">
+            <img src="diwalisales.jpg" class="card-img-top rounded-t-md" alt="Project 1" />
+            <div class="card-body">
+              <h5 class="card-title font-bold text-yellow-400">
+                Diwali Sales Analysis
+              </h5>
+              <p class="card-text text-gray-300">
+                Performed Data Cleaning and Data Manipulation. Performed
+                Exploratory Data Analysis (EDA) using Pandas, NumPy,
+                Matplotlib, Seaborn Libraries.
+              </p>
+              <a href="https://github.com/ankit-bhagat17/Diwali-Sales-Analysis" target="_blank"
+                class="btn btn-yellow mt-3 px-4 py-2 font-semibold text-blue-900 bg-yellow-400 hover:bg-yellow-500 transition rounded shadow">View
+                Project</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div
+            class="card h-100 shadow-lg border-yellow-400 border-2 bg-gradient-to-b from-blue-700 to-blue-900 text-gray-100">
+            <img src="Blinkit.png" class="card-img-top rounded-t-md" alt="Project 2" />
+            <div class="card-body">
+              <h5 class="card-title font-bold text-yellow-400">
+                Blinkit Grocery Sales Analysis
+              </h5>
+              <p class="card-text text-gray-300">
+                This project involves creating a Sales Analysis Dashboard in
+                Power BI using real-world grocery sales data from BlinkIT. The
+                goal is to provide actionable insights into the company’s
+                sales performance, customer behavior, and product trends.
+              </p>
+              <a href="https://github.com/ankit-bhagat17/Blinkit-Grocery-Sales-Analysisi" target="_blank"
+                class="btn btn-yellow mt-3 px-4 py-2 font-semibold text-blue-900 bg-yellow-400 hover:bg-yellow-500 transition rounded shadow">View
+                Project</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div
+            class="card h-100 shadow-lg border-yellow-400 border-2 bg-gradient-to-b from-blue-700 to-blue-900 text-gray-100">
+            <img src="weather.png" class="card-img-top rounded-t-md" alt="Project 3" />
+            <div class="card-body">
+              <h5 class="card-title font-bold text-yellow-400">
+                Weather Dashboard using Pyhton and Streamlit
+              </h5>
+              <p class="card-text text-gray-300">
+                Built a real-time weather dashboard with dynamic city/state
+                selection. Integrated OpenWeatherMap API for live weather
+                updates and used Matplotlib, Seaborn, and Folium for rich data
+                visualizations including line charts, heatmaps, and maps.
+              </p>
+              <a href="https://ankitbhagatweatherapp.streamlit.app" target="_blank"
+                class="btn btn-yellow mt-3 px-4 py-2 font-semibold text-blue-900 bg-yellow-400 hover:bg-yellow-500 transition rounded shadow">View
+                Project</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Contact Modal -->
+  <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-gray-800 text-gray-200 rounded-lg shadow-lg">
+        <div class="modal-header border-b border-gray-600">
+          <h5 class="modal-title text-yellow-400 font-bold" id="contactModalLabel">
+            Contact Me
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="mb-4">I'm open to connect! Reach me on:</p>
+          <ul class="space-y-3">
+            <li>
+              <a href="https://github.com/ankit-bhagat17" target="_blank"
+                class="text-yellow-300 hover:text-yellow-400 font-semibold flex items-center gap-3"
+                rel="noopener noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6 inline" viewBox="0 0 24 24">
+                  <path
+                    d="M12 .297C5.373.297 0 5.67 0 12.297c0 5.296 3.438 9.799 8.207 11.385.6.11.82-.26.82-.577v-2.025c-3.338.725-4.033-1.612-4.033-1.612-.546-1.387-1.334-1.755-1.334-1.755-1.09-.745.082-.729.082-.729 1.204.086 1.837 1.236 1.837 1.236 1.07 1.832 2.807 1.303 3.492.997.11-.775.42-1.304.763-1.605-2.665-.304-5.467-1.335-5.467-5.931 0-1.31.468-2.382 1.236-3.222-.125-.303-.536-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.29-1.552 3.296-1.23 3.296-1.23.656 1.652.245 2.873.12 3.176.77.84 1.235 1.913 1.235 3.222 0 4.609-2.807 5.624-5.479 5.92.428.365.823 1.096.823 2.209v3.277c0 .32.216.694.824.576C20.565 22.092 24 17.59 24 12.297c0-6.627-5.373-12-12-12" />
+                </svg>
+                GitHub Profile
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/ankitsbhagat" target="_blank"
+                class="text-yellow-300 hover:text-yellow-400 font-semibold flex items-center gap-3"
+                rel="noopener noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6 inline" viewBox="0 0 24 24">
+                  <path
+                    d="M19 0h-14c-2.761 0-5 2.238-5 5v14c0 2.763 2.239 5 5 5h14c2.762 0 5-2.237 5-5v-14c0-2.762-2.238-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.291c-.966 0-1.75-.805-1.75-1.79s.784-1.79 1.75-1.79 1.75.805 1.75 1.79-.784 1.79-1.75 1.79zm13.5 10.291h-3v-4.789c0-2.384-3-2.204-3 0v4.789h-3v-9h3v1.299c1.396-2.586 6-2.777 6 2.476v5.225z" />
+                </svg>
+                LinkedIn Profile
+              </a>
+            </li>
+            <li>
+              <a href="mailto:bhagatankit502@gmail.com" target="_blank"
+                class="text-yellow-300 hover:text-yellow-400 font-semibold flex items-center gap-3"
+                rel="noopener noreferrer">
+                <!-- Proper envelope icon SVG -->
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6 inline">
+                  <path
+                    d="M2 4a2 2 0 012-2h16a2 2 0 012 2v16a2 2 0 01-2 2H4a2 2 0 01-2-2V4zm2 0v.01L12 13 20 4.01V4H4zm16 2.243L13.333 14a1 1 0 01-1.333 0L4 6.243V20h16V6.243z" />
+                </svg>
+                bhagatankit502@gmail.com
+              </a>
+            </li>
+            <li>
+              <a href="Ankit_Bhagat_Resume.pdf" target="_blank"
+                class="text-yellow-300 hover:text-yellow-400 font-semibold flex items-center gap-3"
+                rel="noopener noreferrer">
+                <!-- Resume Icon SVG -->
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6 inline" viewBox="0 0 24 24">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zm1 14h-4v-4h-2l4-4 4 4h-2z" />
+                </svg>
+                View Resume
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="modal-footer border-t border-gray-600">
+          <button type="button" class="btn btn-outline-warning" data-bs-dismiss="modal">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-yellow-400 text-center p-4 mt-12 select-none">
+    &copy; 2025 Ankit Bhagat. All rights reserved.
+  </footer>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Highlight nav links on scroll
+    const sections = document.querySelectorAll("main section[id]");
+    const navLinks = document.querySelectorAll("nav a.nav-link");
+
+    function updateActiveNav() {
+      let scrollPos = window.scrollY + window.innerHeight / 3;
+      sections.forEach((section) => {
+        if (
+          scrollPos >= section.offsetTop &&
+          scrollPos < section.offsetTop + section.offsetHeight
+        ) {
+          navLinks.forEach((link) => {
+            link.classList.remove("active");
+            if (link.getAttribute("href") === "#" + section.id) {
+              link.classList.add("active");
+            }
+          });
+        }
+      });
+    }
+    window.addEventListener("scroll", updateActiveNav);
+    updateActiveNav();
+
+    // Contact modal open on button click
+    const contactBtn = document.getElementById("contactBtn");
+    const contactModal = new bootstrap.Modal(
+      document.getElementById("contactModal"),
+      {}
+    );
+
+    contactBtn.addEventListener("click", () => {
+      contactModal.show();
+    });
+  </script>
+
+  <style>
+    /* Tailwind custom animation fadeInUp */
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fadeInUp {
+      animation: fadeInUp 0.8s ease both;
+    }
+  </style>
+</body>
+
+</html>
